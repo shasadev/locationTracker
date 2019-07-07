@@ -6,4 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <Button
+        android:id="@+id/enterUserDetailsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="100dp"
+        android:text="Enter Route Details" />
+
+    <Button
+        android:id="@+id/tripSetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="176dp"
+        android:text="Start Trip" />
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/enterUserDetailsBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="167dp"
+        android:textSize="40dp" />
+
+    <Button
+        android:id="@+id/tripEndDataBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/enterUserDetailsBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="207dp"
+        android:text="Enter Trip Details"
+        android:visibility="gone"/>
+
 </RelativeLayout>
