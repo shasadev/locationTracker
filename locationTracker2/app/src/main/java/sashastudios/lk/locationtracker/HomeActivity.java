@@ -1,5 +1,6 @@
 package sashastudios.lk.locationtracker;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
@@ -7,12 +8,19 @@ import android.location.LocationManager;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,7 +30,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     //firebase tools
     FirebaseDatabase firebaseDatabase;
@@ -31,9 +39,9 @@ public class HomeActivity extends AppCompatActivity {
     LocationListener locationListener;
 
     //layout items
-    Button enterUserDetailsBtn;
+    //Button enterUserDetailsBtn;
     Button tripSetBtn;
-    Button tripEndDataBtn;
+//    Button tripEndDataBtn;
     Chronometer chronometer;
 
     //Is timer running
@@ -42,6 +50,10 @@ public class HomeActivity extends AppCompatActivity {
     // if route details set for the trip
     Boolean isRouteSet = false;
 
+    //navigator
+    private Toolbar toolbar;
+
+    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,21 +61,30 @@ public class HomeActivity extends AppCompatActivity {
 
 
         //initiate layout elements
-        enterUserDetailsBtn = findViewById(R.id.enterUserDetailsBtn);
+//        enterUserDetailsBtn = findViewById(R.id.enterUserDetailsBtn);
         tripSetBtn = findViewById(R.id.tripSetBtn);
-        tripEndDataBtn = findViewById(R.id.tripEndDataBtn);
+//        tripEndDataBtn = findViewById(R.id.tripEndDataBtn);
         chronometer = findViewById(R.id.chronometer);
 
-        tripEndDataBtn.setVisibility(View.GONE);
+//        tripEndDataBtn.setVisibility(View.GONE);
 
-        //device location data
-        double latitude;
-        double longitude;
+        //navigation-- not implemented
+
 
         IsRouteSet();
         //database instance
         firebaseDatabase = FirebaseDatabase.getInstance();
 
+        //navigator
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
         //trace location
         locationListener = new android.location.LocationListener(){
             @Override
@@ -89,13 +110,7 @@ public class HomeActivity extends AppCompatActivity {
         };
 
 
-        enterUserDetailsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, SetRouteDetails.class));
 
-            }
-        });
 
         tripSetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,6 +118,31 @@ public class HomeActivity extends AppCompatActivity {
                 startTimer();
             }
         });
+    }
+
+    //routes
+    public void GetHome(){
+        Intent routeIntent = new Intent(this, HomeActivity.class);
+        startActivity(routeIntent);
+    }
+
+    public void GetRoute(){
+        Intent routeIntent = new Intent(this, SetRouteDetails.class);
+        startActivity(routeIntent);
+
+    }
+
+    public void GetEnd(){
+        Intent routeIntent = new Intent(this, TripEndDataActivity.class);
+        startActivity(routeIntent);
+    }
+    public void GetAbout(){
+        Intent routeIntent = new Intent(this, HomeActivity.class);
+        startActivity(routeIntent);
+    }
+    public void GetContact(){
+        Intent routeIntent = new Intent(this, HomeActivity.class);
+        startActivity(routeIntent);
     }
 
     public void IsRouteSet(){
@@ -175,6 +215,31 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void sendTripTime(){
-        tripEndDataBtn.setVisibility(View.VISIBLE);
+//        tripEndDataBtn.setVisibility(View.VISIBLE);
+    }
+
+    //navigator
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_home) {
+            // Handle the camera action
+            GetHome();
+        } else if (id == R.id.nav_trip_details) {
+            GetRoute();
+        } else if (id == R.id.nav_trip_end) {
+            GetEnd();
+        } else if( id == R.id.nav_about){
+            GetAbout();
+        } else if ( id == R.id.nav_contact) {
+            GetContact();
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
