@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.userActivities.TripEndDataActivity">
+
+    <TextView
+        android:id="@+id/endTripDetailsTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="13dp"
+        android:text="Enter Trip Details Here"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/amountTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/endTripDetailsTxt"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="171dp"
+        android:text="Amount" />
+
+    <EditText
+        android:id="@+id/amountEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/amountTxt"
+        android:layout_alignBottom="@+id/amountTxt"
+        android:layout_marginStart="121dp"
+        android:layout_marginBottom="-15dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/otherTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/amountTxt"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="279dp"
+        android:text="Other Details" />
+
+    <EditText
+        android:id="@+id/otherEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/amountEt"
+        android:layout_alignBottom="@+id/otherTxt"
+        android:layout_marginStart="-3dp"
+        android:layout_marginBottom="-2dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/setRouteDetailsHeader"
+        android:layout_width="349dp"
+        android:layout_height="38dp"
+        android:layout_alignEnd="@+id/busRouteTxt"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="-256dp"
+        android:text="Set Route Details Here"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/endDetailsSubmitBtn"
+        style="@android:style/Widget.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="129dp"
+        android:layout_marginBottom="189dp"
+        android:text="Submit Details" />
+</RelativeLayout>

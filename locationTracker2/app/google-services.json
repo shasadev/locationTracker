@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "839980023246",
+    "firebase_url": "https://location-tracker-e2e9a.firebaseio.com",
+    "project_id": "location-tracker-e2e9a",
+    "storage_bucket": "location-tracker-e2e9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839980023246:android:847ff3682531fdd7",
+        "android_client_info": {
+          "package_name": "sashastudios.lk.locationtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839980023246-5mdcca7sijjodf7i5pfms993cevsujfe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sashastudios.lk.locationtracker",
+            "certificate_hash": "f0ea80303bf3528cd8b0fa2a324a8348fac7640f"
+          }
+        },
+        {
+          "client_id": "839980023246-rqhm6o23sqn54ro98bflvj3nibqq313u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk5nJGgsH0zpZwTOkTu3LA0WCui4t765Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839980023246-rqhm6o23sqn54ro98bflvj3nibqq313u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

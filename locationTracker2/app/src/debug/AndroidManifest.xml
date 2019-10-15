@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="sashastudios.lk.locationtracker">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.HomeActivity" />
+        <activity android:name=".activities.adminActivities.SetRouteDetails" />
+        <activity android:name=".activities.userActivities.TripEndDataActivity" />
+        <activity android:name=".activities.adminActivities.AdminHomeActivity" />
+        <activity android:name=".activities.userActivities.UserHomeActivity" />
+        <activity android:name=".activities.customerActivities.CustomerHomeActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAyM8ctW0r7YorjK0Yw3ooDGo76Q8Rl4h0" />
+
+        <activity android:name=".activities.adminActivities.AddUserActivity" />
+        <activity android:name=".activities.adminActivities.AddRouteActivity" />
+        <activity android:name=".activities.adminActivities.AddBusActivity" />
+        <activity android:name=".AdminSummaryActivity" />
+        <activity android:name=".SignupActivity"></activity>
+    </application>
+
+</manifest>
