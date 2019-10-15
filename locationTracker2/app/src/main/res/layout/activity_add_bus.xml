@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.adminActivities.AddBusActivity">
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="74dp"
+        android:text="Bus Number" />
+
+    <EditText
+        android:id="@+id/busNoTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="22dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView22"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="128dp"
+        android:text="Route" />
+
+    <Spinner
+        android:id="@+id/routeSpinner"
+        android:layout_width="169dp"
+        android:layout_height="38dp"
+        android:layout_alignBottom="@+id/textView23"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="127dp"
+        android:layout_marginBottom="-5dp" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView22"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="178dp"
+        android:text="User" />
+
+    <Spinner
+        android:id="@+id/userSpinner"
+        android:layout_width="173dp"
+        android:layout_height="36dp"
+        android:layout_alignTop="@+id/textView24"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="126dp"
+        android:layout_marginTop="-12dp" />
+
+    <Button
+        android:id="@+id/submitBus"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView22"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginBottom="41dp"
+        android:background="@color/colorPrimary"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <Button
+        android:id="@+id/cancelBus"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/submitBus"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="63dp"
+        android:background="@color/common_google_signin_btn_text_light_focused"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+</RelativeLayout>
